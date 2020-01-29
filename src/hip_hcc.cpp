@@ -520,7 +520,7 @@ ihipDevice_t::ihipDevice_t(unsigned deviceId, unsigned deviceCnt, hc::accelerato
 	if (err != HSA_STATUS_SUCCESS){
 	   _driver_node_id = 0;
 	}
-        
+
 	_hsaAgent = *agent;
     } else {
         _hsaAgent.handle = static_cast<uint64_t>(-1);
@@ -2504,6 +2504,15 @@ hipError_t hipProfilerStop() {
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // HCC-specific accessor functions:
+
+//---
+// Explicit flush of the printf buffer by the user
+hipError_t hipFlushPrintfBuffer()
+{
+    HIP_INIT_API(hipFlushPrintfBuffer);
+    Kalmar::getContext()->flushPrintfBuffer();
+    return ihipLogStatus(hipSuccess);
+}
 
 //---
 hipError_t hipHccGetAccelerator(int deviceId, hc::accelerator* acc) {

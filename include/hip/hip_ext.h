@@ -41,6 +41,13 @@ class accelerator_view;
  *  @{
  */
 
+/**
+ * @brief Explicitly flush the HCC printf buffer
+ * @return #hipSuccess
+ */
+HIP_PUBLIC_API
+hipError_t hipFlushPrintfBuffer();
+
 
 /**
  * @brief Return hc::accelerator associated with the specified deviceId
