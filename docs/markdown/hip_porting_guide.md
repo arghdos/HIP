@@ -557,15 +557,14 @@ some are useful for performance tuning or experimentation (for example HIP_STAGI
 their current values and usage with the environment var "HIP_PRINT_ENV" - set this and then run any HIP application.  For example:
 
 ```
-$ HIP_PRINT_ENV=1 ./myhipapp
-HIP_PRINT_ENV                  =  1 : Print HIP environment variables.
-HIP_LAUNCH_BLOCKING            =  0 : Make HIP APIs 'host-synchronous', so they block until any kernel launches or data copy commands complete. Alias: CUDA_LAUNCH_BLOCKING.
-HIP_DB                         =  0 : Print various debug info.  Bitmask, see hip_hcc.cpp for more information.
-HIP_TRACE_API                  =  0 : Trace each HIP API call.  Print function name and return code to stderr as program executes.
+$ HIP_PRINT_ENV=1 ./myhipapp  
+HIP_PRINT_ENV                  =  1 : Print HIP environment variables.  
+HIP_LAUNCH_BLOCKING            =  0 : Make HIP APIs 'host-synchronous', so they block until any kernel launches or data copy commands complete. Alias: CUDA_LAUNCH_BLOCKING.  
+HIP_DB                         =  0 : Print various debug info.  Bitmask, see hip_hcc.cpp for more information.  
+HIP_TRACE_API                  =  0 : Trace each HIP API call.  Print function name and return code to stderr as program executes.  
 HIP_TRACE_API_COLOR            = green : Color to use for HIP_API.  None/Red/Green/Yellow/Blue/Magenta/Cyan/White
 HIP_PROFILE_API                 =  0 : Add HIP function begin/end to ATP file generated with CodeXL
 HIP_VISIBLE_DEVICES            =  0 : Only devices whose index is present in the secquence are visible to HIP applications and they are enumerated in the order of secquence
-
 ```
 
 
